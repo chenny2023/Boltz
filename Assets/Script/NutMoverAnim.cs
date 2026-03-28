@@ -41,6 +41,11 @@ public class NutMoverAnim : MonoBehaviour
         nut.transform.position = finalPos;
         nut.transform.SetParent(targetBolt.transform);
         nut.GetComponent<NutSelectorAnim>().originalPosition = this.transform.localPosition;
+
+        if (LevelProgressManager.Instance != null)
+        {
+            LevelProgressManager.Instance.OnPlayerMoveResolved();
+        }
     }
 
     private IEnumerator MoveToPosition(GameObject obj, Vector3 targetPos)

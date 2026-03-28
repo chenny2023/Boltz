@@ -91,3 +91,28 @@ This project is open-source under the [MIT License](LICENSE).
 
 > Made with ❤️ by Amirparsa Aminian  
 > AI logic, pathfinding, and heuristic design by Amirparsa Aminian
+
+
+## 🌐 GitHub Pages (Unity WebGL)
+
+This repository now includes an automated GitHub Pages deployment workflow for Unity WebGL:
+
+- Workflow file: `.github/workflows/deploy-pages.yml`
+- Trigger: push to `main`, `master`, or `work` (and manual `workflow_dispatch`)
+- Output: publishes a WebGL build to GitHub Pages
+
+### One-time setup
+1. In GitHub repository settings, enable **Pages** with source set to **GitHub Actions**.
+2. Add these repository secrets:
+   - `UNITY_LICENSE`
+   - `UNITY_EMAIL`
+   - `UNITY_PASSWORD`
+3. Push to one of the configured branches.
+
+After the workflow succeeds, your public URL will be available in:
+- **Actions > Deploy Unity WebGL to GitHub Pages > deploy job output**
+- and under **Settings > Pages**.
+
+> Notes:
+> - The URL format is typically `https://<your-username>.github.io/<repo-name>/`.
+> - The first build can take longer because Unity needs to import and cache project assets.
